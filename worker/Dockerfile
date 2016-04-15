@@ -1,4 +1,4 @@
-FROM resin/raspberrypi3-python
+FROM resin/raspberrypi2-python
 RUN pip install redis
 RUN pip install requests
 COPY worker.py /

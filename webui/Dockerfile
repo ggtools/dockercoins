@@ -1,4 +1,4 @@
-FROM resin/raspberrypi3-node:4.3-slim
+FROM resin/raspberrypi2-node:4.3-slim
 RUN npm install express
 RUN npm install redis
 COPY files/ /files/
