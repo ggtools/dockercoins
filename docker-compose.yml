@@ -2,23 +2,22 @@ version: '2'
 
 services:
   rng:
-    build: rng
+    image: ggtools/qd9d-dvx-2016-rng:rpi-3
     ports:
     - 80
 
   hasher:
-    build: hasher
+    image: ggtools/qd9d-dvx-2016-hasher:rpi-3
     ports:
     - 80
 
   webui:
-    build: webui
+    image: ggtools/qd9d-dvx-2016-webui:rpi-3
     ports:
     - 80
 
   redis:
-    image: redis
+    image: hypriot/rpi-redis
 
   worker:
-    build: worker
-
+    image: ggtools/qd9d-dvx-2016-worker:rpi-3

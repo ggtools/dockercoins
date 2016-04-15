@@ -11,19 +11,14 @@ app.debug = os.environ.get("DEBUG", "").lower().startswith('y')
 
 hostname = socket.gethostname()
 
-urandom = os.open("/dev/urandom", os.O_RDONLY)
-
-
 @app.route("/")
 def index():
     return "HASHER running on {}\n".format(hostname)
 
 @app.route("/", methods=['POST'])
 def hash():
-    time.sleep(0.1)
-    body = request.data
-    print body
-    digest = hashlib.sha256(body).hexdigest()
+    # time.sleep(0.1)
+    digest = hashlib.sha256(request.data).hexdigest()
     return Response(digest, mimetype='text/plain')
 
 if __name__ == "__main__":
